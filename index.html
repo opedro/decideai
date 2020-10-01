@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <title>O que comer</title>
+        <script>
+            const foodType = ["Comida Italiana", "Comida Mexicana", "Hamburguer", "PF", "Comida Japonesa", "Comida Arabe"];
+            const complement = ["cara", "barata", "caseira", "que nunca comeu", "de um restaurante novo", " e vai ser a primeira que ver no app de delivery"];
+            function decideai(){
+                const random = Math.floor(Math.random() * 6);
+                alert("Você vai comer "+ foodType[random]+ " "+ complement[random]);
+            }
+        </script>
+        <button onClick="decideai()">DECIDE PRA MIM</button>
+    </body>
+
+</html>
