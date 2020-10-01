@@ -1,15 +1,32 @@
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
     <body>
         <title>O que comer</title>
+        <meta name="description" content="Site para te ajudar a decidir o que vai comer ">
         <script>
             const foodType = ["Comida Italiana", "Comida Mexicana", "Hamburguer", "PF", "Comida Japonesa", "Comida Arabe"];
             const complement = ["cara", "barata", "caseira", "que nunca comeu", "de um restaurante novo", " e vai ser a primeira que ver no app de delivery"];
             function decideai(){
-                const random = Math.floor(Math.random() * 6);
-                alert("Você vai comer "+ foodType[random]+ " "+ complement[random]);
+                const tamanhoDaLista = complement.length
+                const random = Math.floor(Math.random() * tamanhoDaLista);
+                const random2 = Math.floor(Math.random() * tamanhoDaLista);
+                alert("Você vai comer "+ foodType[random]+ " "+ complement[random2]);
             }
         </script>
-        <button onClick="decideai()">DECIDE PRA MIM</button>
+        <button  alt="Click para decidir o que vai comer" onClick="decideai()">DECIDE PRA MIM</button>
+    
+    <style>
+        button{
+            width: 320px;
+            margin: 50% auto 50% auto;
+            display: block;
+            height: 100px;
+
+        }
+    </style>
     </body>
 
 </html>
