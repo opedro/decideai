@@ -1,0 +1,7 @@
+button{
+    width: 320px;
+    height: 100px;
+    left: calc(50% - 160px);
+    top: calc(50% - 50px);
+    position: fixed;
+}
