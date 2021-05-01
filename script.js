@@ -1,5 +1,8 @@
 document.onreadystatechange = ()=>{
-    
+    const baseMessage = {
+        food: "Você vai comer",
+        watch: "Você vai assistir"
+    }
     const type = {
         food: ["Comida Italiana", "Comida Mexicana", "Hamburguer", "PF", "Comida Japonesa", "Comida Árabe"],
         watch: ["uma série", "um filme", "um vídeo no youtube", "um documentário", "um reality"]
@@ -11,17 +14,9 @@ document.onreadystatechange = ()=>{
 
     function decideai(category){
         let randomType, randomComplement; 
-        switch(category){
-            case 'food':
-                randomType = Math.floor(Math.random() * type.food.length);
-                randomComplement = Math.floor(Math.random() * complement.food.length);
-                return "Você vai comer " + type.food[randomType] + " " + complement.food[randomComplement];
-            case 'watch':
-                randomType = Math.floor(Math.random() * type.watch.length);
-                randomComplement = Math.floor(Math.random() * complement.watch.length);
-                return "Você vai assistir " + type.watch[randomType] + " " + complement.watch[randomComplement];
-        }
-        
+        randomType = Math.floor(Math.random() * type[category].length);
+        randomComplement = Math.floor(Math.random() * complement[category].length);
+        return baseMessage[category] + " " + type[category][randomType] + " " + complement[category][randomComplement];
     }
     
     document.getElementById('decideAiComida').onclick = function(){
