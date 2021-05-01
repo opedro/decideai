@@ -1,7 +1,13 @@
 button{
     width: 320px;
     height: 100px;
-    left: calc(50% - 160px);
-    top: calc(50% - 50px);
     position: fixed;
+}
+#decideAiComida{
+    left: calc(50% - 320px);
+    top: calc(50% - 50px);
+}
+#decideAiAssistir{
+    left: calc(50%);
+    top: calc(50% - 50px);
 }
