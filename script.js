@@ -1,16 +1,33 @@
 document.onreadystatechange = ()=>{
+    
+    const type = {
+        food: ["Comida Italiana", "Comida Mexicana", "Hamburguer", "PF", "Comida Japonesa", "Comida Árabe"],
+        watch: ["uma série", "um filme", "um vídeo no youtube", "um documentário", "um reality"]
+    }
+    const complement = {
+        food: ["com preço alto", "com preço baixo", "caseira(o)", "de um restaurante que nunca comeu", "e vai ser um prato que nunca comeu", "e vai ser do primeiro restaurante que aparecer no app de delivery"],
+        watch: ["de comédia", "que você ja viu", "cringe", "e tem que ser a primeira indicação de alguma rede social", "que você nunca ouviu falar", "e vai ser o primeiro que aparecer na plataforma", "de ação", "de romance", "de terror", "de ficção científica"]
+    }
 
-    const foodType = ["Comida Italiana", "Comida Mexicana", "Hamburguer", "PF", "Comida Japonesa", "Comida Árabe"];
-    const complement = ["com preço alto", "com preço baixo", "caseira(o)", "de um restaurante que nunca comeu", "e vai ser um prato que nunca comeu", "e vai ser do primeiro restaurante que aparecer no app de delivery"];
-
-    function decideai(){
-        const tamanhoDaLista = complement.length
-        const random = Math.floor(Math.random() * tamanhoDaLista);
-        const random2 = Math.floor(Math.random() * tamanhoDaLista);
-        return "Você vai comer "+ foodType[random]+ " "+ complement[random2]
+    function decideai(category){
+        let randomType, randomComplement; 
+        switch(category){
+            case 'food':
+                randomType = Math.floor(Math.random() * type.food.length);
+                randomComplement = Math.floor(Math.random() * complement.food.length);
+                return "Você vai comer " + type.food[randomType] + " " + complement.food[randomComplement];
+            case 'watch':
+                randomType = Math.floor(Math.random() * type.watch.length);
+                randomComplement = Math.floor(Math.random() * complement.watch.length);
+                return "Você vai assistir " + type.watch[randomType] + " " + complement.watch[randomComplement];
+        }
+        
     }
     
-    document.getElementById('decideAi').onclick = function(){
-        alert(decideai());
+    document.getElementById('decideAiComida').onclick = function(){
+        alert(decideai('food'));
+    }
+    document.getElementById('decideAiAssistir').onclick = function(){
+        alert(decideai('watch'));
     }
 }
