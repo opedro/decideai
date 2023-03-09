@@ -1,15 +1,18 @@
 document.onreadystatechange = ()=>{
     const baseMessage = {
         food: "Você vai comer",
-        watch: "Você vai assistir"
+        watch: "Você vai assistir",
+        animais: "desenhe um desses:"
     }
     const type = {
         food: ["Comida Italiana", "Comida Mexicana", "Hamburguer", "PF", "Comida Japonesa", "Comida Árabe"],
-        watch: ["uma série", "um filme", "um vídeo no youtube", "um documentário", "um reality"]
+        watch: ["uma série", "um filme", "um vídeo no youtube", "um documentário", "um reality"],
+        animais: animais,
     }
     const complement = {
         food: ["com preço alto", "com preço baixo", "caseira(o)", "de um restaurante que nunca comeu", "e vai ser um prato que nunca comeu", "e vai ser do primeiro restaurante que aparecer no app de delivery"],
-        watch: ["de comédia", "que você ja viu", "cringe", "e tem que ser a primeira indicação de alguma rede social", "que você nunca ouviu falar", "e vai ser o primeiro que aparecer na plataforma", "de ação", "de romance", "de terror", "de ficção científica"]
+        watch: ["de comédia", "que você ja viu", "cringe", "e tem que ser a primeira indicação de alguma rede social", "que você nunca ouviu falar", "e vai ser o primeiro que aparecer na plataforma", "de ação", "de romance", "de terror", "de ficção científica"],
+        animais: animais,
     }
 
     function decideai(category){
@@ -24,5 +27,8 @@ document.onreadystatechange = ()=>{
     }
     document.getElementById('decideAiAssistir').onclick = function(){
         alert(decideai('watch'));
+    }
+    document.getElementById('decideAiDesenho').onclick = function(){
+        alert(decideai('animais'));
     }
 }
