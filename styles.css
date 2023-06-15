@@ -1,5 +1,7 @@
 button{
     margin: 15px auto 0 auto;
+    width: 320px;
+    height: 100px;
 }
 #items{ 
     justify-content: center;
